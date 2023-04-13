@@ -13,4 +13,4 @@ spring:
       port: 27017
       database: biaster
       uri: mongodb://localhost:27017/
-      authentication-database:
+      authentication-database: admin
