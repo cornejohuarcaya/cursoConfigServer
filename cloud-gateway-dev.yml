@@ -12,18 +12,19 @@ eureka:
     
 spring:
   cloud:
-      gateway:
-        routes:
-          - id: user-service
-            uri: lb://user-service
-            predicates:
-              - Path=/api/user-service/**
-            filters:
-              - StripPrefix=2
+    gateway:
+      routes:
+       - id: user-service
+         uri: lb://user-service
+         predicates:
+          - Path=/api/user-service/**
+         filters:
+          - StripPrefix=2
+          
+       - id: product-service
+         uri: lb://product-service
+         predicates:
+          - Path=/api/product-service/**
+         filters:
+          - StripPrefix=2
  
-            - id: product-service
-            uri: lb://product-service
-            predicates:
-              - Path=/api/product-service/**
-            filters:
-              - StripPrefix=2
