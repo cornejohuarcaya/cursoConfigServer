@@ -12,7 +12,7 @@ spring:
       - id: user-service
         uri: user-service
         predicates:
-           - Path=/apo/user-service/**
+           - Path=/api/user-service/**
         filers:
             - StripPrefix=2
  
