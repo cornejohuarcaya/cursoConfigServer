@@ -17,13 +17,13 @@ spring:
           - id: user-service
             uri: lb://user-service
             predicates:
-              - Path=/api/user-service/**
+              - Path: /api/user-service/**
             filers:
-              - StripPrefix=2
+              - StripPrefix: 2
  
             - id: product-service
             uri: lb://product-service
             predicates:
-              - Path=/api/product-service/**
+              - Path: /api/product-service/**
             filers:
-              - StripPrefix=2
+              - StripPrefix: 2
