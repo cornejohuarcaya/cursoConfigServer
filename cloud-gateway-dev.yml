@@ -15,9 +15,15 @@ spring:
       gateway:
         routes:
           - id: user-service
-            uri: user-service:9004
+            uri: lb://user-service
             predicates:
               - Path=/api/user-service/**
             filers:
               - StripPrefix=2
  
+            - id: product-service
+            uri: lb://product-service
+            predicates:
+              - Path=/api/product-service/**
+            filers:
+              - StripPrefix=2
