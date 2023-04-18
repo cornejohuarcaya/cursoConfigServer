@@ -7,3 +7,14 @@ eureka:
       defaultZone: http://localhost:8761/eureka
       
 
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: user-service
+          predicates:
+            - Path=/apo/user-service/**
+          filers:
+            - StripPrefix=2
+ 
