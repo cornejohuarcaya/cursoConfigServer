@@ -15,7 +15,7 @@ spring:
       gateway:
         routes:
           - id: user-service
-            uri:  user-service:9004
+            uri: user-service:9004
             predicates:
               - Path=/api/user-service/**
             filers:
