@@ -27,4 +27,4 @@ spring:
           - Path=/api/product-service/**
          filters:
           - StripPrefix=2
-          - AddRequestParameter=flag, blue
+#          - AddRequestParameter=flag, blue
