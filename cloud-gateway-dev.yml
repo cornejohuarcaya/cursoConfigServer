@@ -27,13 +27,14 @@ spring:
           - Path=/api/product-service/**
          filters:
           - StripPrefix=2
-
-
+          -name: CircuitBreaker
+           args:
+            name: productCB
             
 resilience4j:
   circuitbreaker:
     configs:
-      client-service:
+      productService:
         sliding-window-size: 20
         failure-rate-threshold: 75
         wait-duration-in-open-state: 30s
@@ -42,4 +43,4 @@ resilience4j:
         slow-call-rate-threshold: 40
     instances:
       productCB:
-        base-config: client-service
+        base-config: productService
