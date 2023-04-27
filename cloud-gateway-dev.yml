@@ -27,9 +27,9 @@ spring:
           - Path=/api/product-service/**
          filters:
           - StripPrefix=2
-          -name: CircuitBreaker
-           args:
-            name: productCB
+          - name: CircuitBreaker
+            args:
+             name: productCB
             
 resilience4j:
   circuitbreaker:
