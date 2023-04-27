@@ -28,4 +28,20 @@ spring:
          filters:
           - StripPrefix=2
 #          - AddRequestParameter=flag, blue
-
+          -name: CircuitBreaker
+          args:
+            name: productCB
+            
+resilience4j:
+  circuitbreaker:
+    configs:
+      client-service:
+        sliding-window-size: 20
+        failure-rate-threshold: 75
+        wait-duration-in-open-state: 30s
+        permitted-number-of-calls-in-half-open-state: 10
+        max-wait-duration-in-half-open-state: 2s
+        slow-call-rate-threshold: 40
+    instances:
+      productCB:
+        base-config: client-service
