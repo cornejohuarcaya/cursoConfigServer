@@ -24,4 +24,4 @@ resilience4j:
         
     instances:
       productCB:
-        base-config: product-service-circuitbreaker-product
+        base-config: product-service
