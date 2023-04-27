@@ -14,7 +14,7 @@ eureka:
 resilience4j:
   circuitbreaker:
     configs:
-      product-service-circuitbreaker-product:
+      product-service:
         sliding-window-size: 20
         failure-rate-threshold: 75
         wait-duration-in-open-state: 30s
