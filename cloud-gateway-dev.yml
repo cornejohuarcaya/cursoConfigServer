@@ -42,7 +42,6 @@ resilience4j:
         permitted-number-of-calls-in-half-open-state: 10
         max-wait-duration-in-half-open-state: 2s
         slow-call-rate-threshold: 40
-        
     instances:
       productCB:
         base-config: client-service
