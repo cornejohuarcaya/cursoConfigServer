@@ -11,3 +11,17 @@ eureka:
     fetchRegistry: true
     
 
+resilience4j:
+  circuitbreaker:
+    configs:
+      product-service-circuitbreaker-product:
+        sliding-window-size: 20
+        failure-rate-threshold: 75
+        wait-duration-in-open-state: 30s
+        permitted-number-of-calls-in-half-open-state: 10
+        max-wait-duration-in-half-open-state: 2s
+        slow-call-rate-threshold: 40
+        
+    instances:
+      productCB:
+        base-config: product-service-circuitbreaker-product
